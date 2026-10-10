@@ -22,6 +22,11 @@ if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) {
 }
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: [
+    "https://bazar-dor-gamma-seven.vercel.app",
+    "http://localhost:3000",
+  ],
   database: mongodbAdapter(client.db(), { client }),
   emailAndPassword: {
     enabled: true,
