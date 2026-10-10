@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "bazardor";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #fafcfa;
+  --color-base-200: #f0f5f0;
+  --color-base-300: #e1e8e1;
+  --color-base-content: #1d271f;
+  --color-primary: #05893e;
+  --color-primary-content: #f3fbf4;
+  --color-secondary: #187146;
+  --color-secondary-content: #f3fbf4;
+  --color-accent: #05893e;
+  --color-accent-content: #f3fbf4;
+  --color-neutral: #1d271f;
+  --color-neutral-content: #fafcfa;
+  --color-info: #05893e;
+  --color-info-content: #f3fbf4;
+  --color-success: #1a9951;
+  --color-success-content: #f3fbf4;
+  --color-warning: #d97706;
+  --color-warning-content: #ffffff;
+  --color-error: #d03739;
+  --color-error-content: #fff6f5;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --color-primary-strong: #047f39;
+  --color-primary-stronger: #047c37;
+  --color-primary-border-hover: #037333;
+  --color-link-hover: #02642b;
+  --color-hover-neutral: #dadeda;
+  --color-hover-neutral-border: #ccd0cc;
+  --color-error-hover: #bd3133;
+  --color-error-hover-border: #b02d2f;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: #f0f5f0;
+  color: #1d271f;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
